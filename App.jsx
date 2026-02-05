@@ -1,16 +1,16 @@
-// import { useState } from 'react'
-// import reactLogo from './assets/react.svg'
-// import viteLogo from '/vite.svg'
-// import './App.css'
-import React from "react";
-import soa from './assets/soa.png';
+import { useEffect,useState } from "react"
 function App() {
-  // const [count, setCount] = useState(0)
+   const[message,setmessage]=useState("");
+   useEffect(()=>{
+    fetch("http://localhost:5000/api/hello")
+    .then(res=>res.json())
+    .then(data=>setmessage(data.message));
+   },[]);
   return (
     <div>
-    <img src={soa} alt="app soa" />
-    <h1>Welcome to SOA Deemed to be University</h1>
+      <h1>React Express+Example</h1>
+      <p1>{message}</p1>
     </div>
-  ) }
-
-export default App;
+  );
+}
+export default App
