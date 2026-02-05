@@ -1,3 +1,5 @@
+//React Express+Example
+//Hello from Express(written inside frontend)
 import { useEffect,useState } from "react"
 function App() {
    const[message,setmessage]=useState("");
